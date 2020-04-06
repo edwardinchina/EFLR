@@ -10,6 +10,12 @@
 
   var context = document.querySelector(".context");
 
+  context.addEventListener('blur', (event) => {window.setTimeout(wrapEachCharacter(event.target),100)});
+  context.addEventListener('paste', (event) => {window.setTimeout(wrapEachCharacter(context),100)});
+  context.addEventListener('compositionend', (event) => {
+    wrapEachCharacter(event.target);
+  });
+
   wrapEachCharacter(context);
 
   function isCharacter(text){
@@ -73,6 +79,11 @@
   }
 
   function wrapEachCharacter(nodeToWrap){
+    if(nodeToWrap.isCharacter){
+      firstChild = nodeToWrap.firstChild;
+      unwrap(nodeToWrap);
+      nodeToWrap = firstChild;
+    }
     if(nodeToWrap.nodeName == '#text'){
       wrapEach(nodeToWrap,fwrapper)
     }

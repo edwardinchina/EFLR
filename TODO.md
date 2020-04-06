@@ -20,3 +20,8 @@
 2. Grammarly, AutoCrit, and distraction free editors are very popular and lucrative.
 3. Personally this will help me and my children to learn to read (and possibly type) Chinese.
 4. Finishing something will mean a lot to me.
+
+# Why online?
+1. No downloads.
+2. Can use subscription or advertising for revenue.
+3. Can mine data to see how hard words are translated into easy words.
