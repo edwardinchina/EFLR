@@ -22,6 +22,6 @@
 4. Finishing something will mean a lot to me.
 
 # Why online?
-1. No downloads.
+1. No downloads.asdf 
 2. Can use subscription or advertising for revenue.
 3. Can mine data to see how hard words are translated into easy words.
