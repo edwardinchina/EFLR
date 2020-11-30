@@ -22,6 +22,17 @@
     return (text.length == 1 && text.codePointAt(0) > 3400)
   }
 
+function moveCursorToEnd(el) {
+    if (typeof el.selectionStart == "number") {
+        el.selectionStart = el.selectionEnd = el.value.length;
+    } else if (typeof el.createTextRange != "undefined") {
+        el.focus();
+        var range = el.createTextRange();
+        range.collapse(false);
+        range.select();
+    }
+}
+
   function fwrapper(node){
     var text = node.data;
     var wrapper;
@@ -91,7 +102,7 @@
       wrapEachCharacterList(nodeToWrap.childNodes);
     }
     else if (nodeToWrap.hasChildNodes) {
-      wrapEachCharacterList(nodeToWrap.childNodes);
+      moveCursorToEnd(wrapEachCharacterList(nodeToWrap.childNodes));
     }
   }
 
